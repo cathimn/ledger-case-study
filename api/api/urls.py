@@ -9,5 +9,5 @@ urlpatterns = [
     path('__debug__/', include(debug_toolbar.urls)),
 
     # api
-    path('api/v1/', include('policies.urls'))
+    path('api/', include('policies.urls'))
 ]
