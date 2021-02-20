@@ -29,9 +29,8 @@ pip install -r requirements.txt
 
 ## Endpoints
 
-* `http://localhost:8000/api/policies/` provides the DRF browsable interface
-* `http://localhost:8000/api/policies/?format=json` returns the raw Json response
-* Sample output
+* [`api/policies/`](http://localhost:8000/api/policies/) provides the DRF browsable interface
+* [`api/policies/?format=json`](http://localhost:8000/api/policies/?format=json) returns the raw Json response
   ```json 
       {
           "count": 20000,
@@ -56,7 +55,7 @@ pip install -r requirements.txt
           ]
       }
   ```
-    * `http://localhost:8000/api/policies/?driver_gender=female&driver_employment=retired` returns policies with a
+    * [`/api/policies/?driver_gender=female&driver_employment=retired`](http://localhost:8000/api/policies/?driver_gender=female&driver_employment=retired) returns policies with a
       retired female driver
 
 ## Loading sqlite
