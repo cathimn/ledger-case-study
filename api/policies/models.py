@@ -36,19 +36,20 @@ class AutoPolicy(models.Model):
 
     public_id = models.UUIDField(default=uuid.uuid4, unique=True)
 
-    # Policy start date
+    # Policy start year/month
     year = models.IntegerField()
     month = models.IntegerField()
 
+    # Features
     driver_age = models.IntegerField()
     driver_gender = models.CharField(max_length=255, choices=DriverGender.choices)
     driver_employment = models.CharField(max_length=255, choices=DriverEmployment.choices)
     driver_marital = models.CharField(max_length=255, choices=DriverMaritalStatus.choices)
     driver_location = models.CharField(max_length=255, choices=DriverLocation.choices)
-
     vehicle_age = models.IntegerField()
     vehicle_model = models.CharField(max_length=255, choices=VehicleModel.choices)
 
+    # Metrics
     insurance_premium = models.FloatField()
     insurance_claims = models.IntegerField()
     insurance_losses = models.FloatField()
