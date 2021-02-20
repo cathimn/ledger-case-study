@@ -21,13 +21,8 @@ pip install -r requirements.txt
 ## Notes
 
 * Depending on how you access the API from your client app, you might need to install middleware to handle CORs. I
-  recommend using [`django-cors-headers`](https://pypi.org/project/django-cors-headers/), however, feel free to use what
-  you are comfortable with.
-
-## Rules
-
-* Keep in mind that this is only a guide to get started prototyping quickly. Please feel free to refactor and/or move
-  things around as you find appropriate
+  recommend using [`django-cors-headers`](https://pypi.org/project/django-cors-headers/).
+* Please feel free to refactor and/or move things around as you find appropriate
 * Feel free to use any libraries that you find useful
 * Do not be concerned with CSRF or authentication
 
