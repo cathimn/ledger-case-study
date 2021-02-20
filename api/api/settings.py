@@ -18,13 +18,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    # pypi
     'rest_framework',
     'rest_framework_filters',
     'debug_toolbar',
-
-    # local
     'policies',
 ]
 
