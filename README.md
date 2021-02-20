@@ -55,8 +55,8 @@ pip install -r requirements.txt
           ]
       }
   ```
-    * [`/api/policies/?driver_gender=female&driver_employment=retired`](http://localhost:8000/api/policies/?driver_gender=female&driver_employment=retired) returns policies with a
-      retired female driver
+* [`/api/policies/?driver_gender=female&driver_employment=retired`](http://localhost:8000/api/policies/?driver_gender=female&driver_employment=retired) returns policies with a
+  retired female driver
 
 ## Loading sqlite
 
