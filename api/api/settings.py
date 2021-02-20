@@ -18,8 +18,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'debug_toolbar',
+
+    # pypi
     'rest_framework',
+    'rest_framework_filters',
+    'debug_toolbar',
+
+    # local
     'policies',
 ]
 
@@ -81,7 +86,10 @@ AUTH_PASSWORD_VALIDATORS = [
 # DRF Configuration
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
-    'PAGE_SIZE': 100
+    'PAGE_SIZE': 100,
+    'DEFAULT_FILTER_BACKENDS': (
+        'rest_framework_filters.backends.RestFrameworkFilterBackend',
+    ),
 }
 
 # Internationalization
