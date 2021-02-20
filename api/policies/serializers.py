@@ -8,5 +8,4 @@ class AutoPolicySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = AutoPolicy
-        # fields = '__all__'
         exclude = ['public_id']
