@@ -14,6 +14,7 @@ python3 -m venv env
 source env/bin/activate
 pip install -r requirements.txt
 
+cd api/
 ./manage.py runserver
 
 # Django should now be running at http://localhost:8000
@@ -26,6 +27,12 @@ pip install -r requirements.txt
 * Depending on how you access the API from your client app, you might need to install middleware to handle CORs. I
   recommend using [`django-cors-headers`](https://pypi.org/project/django-cors-headers/).
 * Do not be concerned with CSRF or authentication
+
+## Project Structure
+
+* `api/` - Base Django project
+* `policies/` - Django application for policies
+* `data/` - Data directory
 
 ## Endpoints
 

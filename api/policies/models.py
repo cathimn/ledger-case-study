@@ -5,34 +5,34 @@ from django.db import models
 
 class AutoPolicy(models.Model):
     class DriverGender(models.TextChoices):
-        MALE = 'male'
         FEMALE = 'female'
+        MALE = 'male'
 
     class DriverEmployment(models.TextChoices):
         EMPLOYED = 'employed'
-        UNEMPLOYED = 'unemployed'
         HOMEMAKER = 'homemaker'
-        RETIRED = 'retired'
         OTHER = 'other_emp'
+        RETIRED = 'retired'
         STUDENT = 'student'
+        UNEMPLOYED = 'unemployed'
 
     class DriverMaritalStatus(models.TextChoices):
         MARRIED = 'married'
         SINGLE = 'single'
 
     class DriverLocation(models.TextChoices):
+        RURAL = 'rural'
         SUBURBAN = 'suburban'
         URBAN = 'urban'
-        RURAL = 'rural'
 
     class VehicleModel(models.TextChoices):
         COUPE = 'coupe_cabriolet'
-        VAN = 'van'
+        HATCHBACK = 'hatchback'
+        OTHER = 'other_model'
+        PICKUP = 'pickup'
         SEDAN = 'sedan'
         SUV = 'suv'
-        OTHER = 'other_model'
-        HATCHBACK = 'hatchback'
-        PICKUP = 'pickup'
+        VAN = 'van'
 
     public_id = models.UUIDField(default=uuid.uuid4, unique=True)
 
