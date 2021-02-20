@@ -1,7 +1,8 @@
 # ledger-case-study-starter
 
-A minimal Django REST Framework based API server for returning auto policy data. This starter is _not_ meant to be
-production ready and may ignore best practices for the sake of brevity.
+A minimal Django REST Framework based API server for returning auto policy data. It provides basic functionality such as
+CRUD, filtering, and pagination. This starter is _not_ meant to be production ready and may ignore best practices for
+the sake of brevity.
 
 ## Initial Setup & Running
 
@@ -20,16 +21,16 @@ pip install -r requirements.txt
 
 ## Notes
 
+* Feel free to add/modify/refactor this project in any way to help your frontend client
+* You may use any libraries that you are comfortable with or find useful
 * Depending on how you access the API from your client app, you might need to install middleware to handle CORs. I
   recommend using [`django-cors-headers`](https://pypi.org/project/django-cors-headers/).
-* Please feel free to refactor and/or move things around as you find appropriate
-* Feel free to use any libraries that you find useful
 * Do not be concerned with CSRF or authentication
 
 ## Endpoints
 
-* http://localhost:8000/api/policies/
-* http://localhost:8000/api/policies/?format=json
+* `http://localhost:8000/api/policies/` provides the DRF browsable interface
+* `http://localhost:8000/api/policies/?format=json` returns the raw Json response
 * Sample output
   ```json 
       {
@@ -55,6 +56,8 @@ pip install -r requirements.txt
           ]
       }
   ```
+    * `http://localhost:8000/api/policies/?driver_gender=female&driver_employment=retired` returns policies with a
+      retired female driver
 
 ## Loading sqlite
 
