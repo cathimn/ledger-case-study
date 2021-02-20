@@ -4,7 +4,8 @@ from django.db import models
 
 
 class AutoPolicy(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    id = models.AutoField(primary_key=True)
+    public_id = models.UUIDField(default=uuid.uuid4, unique=True)
 
     # Policy start date
     year = models.IntegerField()
