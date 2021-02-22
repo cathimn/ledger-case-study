@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Button, Center, Divider, Grid, GridItem, Heading, List, ListItem } from '@chakra-ui/react';
+import { Box, Button, Center, Divider, Grid, GridItem, Heading, List, ListItem, Select, Text } from '@chakra-ui/react';
 import SelectFilter from './SelectFilter';
-import Chart from './Chart';
+import { Doughnut } from 'react-chartjs-2';
 
 function Portfolio() {
   const [loaded, setLoaded] = useState(false);
@@ -30,7 +30,7 @@ function Portfolio() {
     const totalPremiums = results.map(result => result.insurance_premium).reduce((sum, a) => sum + a);
     const totalLosses = results.map(result => result.insurance_losses).reduce((sum, a) => sum + a);
     setData({
-      labels: ["Losses", "Remaining Premiums"],
+      labels: ["Losses ($)", "Remaining Premiums ($)"],
       datasets: [
         {
           label: "FJDK",
@@ -60,7 +60,7 @@ function Portfolio() {
     const totalPremiums = results.map(result => result.insurance_premium).reduce((sum, a) => sum + a);
       const totalLosses = results.map(result => result.insurance_losses).reduce((sum, a) => sum + a);
       setData({
-        labels: ["Losses", "Remaining Premiums"],
+        labels: ["Losses ($)", "Remaining Premiums ($)"],
         datasets: [
           {
             label: "FJDK",
@@ -87,8 +87,15 @@ function Portfolio() {
         templateColumns="repeat(2, 1fr)"
       >
         <GridItem p={5}>
-          Count: {policies.count}
-          <Chart data={data} />
+          <Select size="sm" placeholder="Change visualization" disabled>
+            
+          </Select>
+          <Grid pt={5}>
+            <Doughnut data={data} height={225} />
+            <Text fontSize="sm" pt={5}>
+              Total Count: {policies.count}
+            </Text>
+          </Grid>
         </GridItem>
         <GridItem p={5}>
           <SelectFilter policies={policies} filers={filters} updateFilter={updateFilter} />
@@ -96,7 +103,7 @@ function Portfolio() {
             {policies.results.map(policy =>
               <List p={3} mb={2} borderWidth="1px" borderRadius="md" fontSize="sm">
                 <ListItem>
-                  Memeber Since: {policy.month + "/" + policy.year}
+                  Member Since: {policy.month + "/" + policy.year}
                 </ListItem>
                 <ListItem>
                   Premium: {new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD'}).format(policy.insurance_premium)}

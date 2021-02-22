@@ -6,9 +6,17 @@ import {
   Grid,
   theme,
   Flex,
+  Button,
+  Stack,
+  Avatar,
+  Input,
+  Divider,
+  InputGroup,
+  InputLeftElement,
 } from '@chakra-ui/react';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
 import Portfolio from './components/Portfolio';
+import { FaSearch } from 'react-icons/fa';
 
 function App() {
   return (
@@ -19,7 +27,13 @@ function App() {
             <Text alignSelf="center" fontSize="lg">
               Case Study
             </Text>
-            <ColorModeSwitcher />
+            <Stack direction="row">
+              <InputGroup>
+                <Input mr={5} size="md" placeholder="Search..." disabled />
+              </InputGroup>
+              <Button variant="ghost" disabled mr={5}>My Account</Button>
+              <ColorModeSwitcher />
+            </Stack>
           </Flex>
           <Portfolio />
         </Grid>

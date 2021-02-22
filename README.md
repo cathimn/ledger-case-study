@@ -21,6 +21,7 @@ cd api/
 
 cd frontend/
 npm install
+npm start
 
 # See React app at http://localhost:3000
 ```
