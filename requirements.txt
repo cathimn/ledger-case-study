@@ -6,3 +6,4 @@ djangorestframework==3.12.2
 djangorestframework-filters==1.0.0.dev0
 pytz==2021.1
 sqlparse==0.4.1
+django-cors-headers==3.7.0

@@ -18,6 +18,11 @@ cd api/
 ./manage.py runserver
 
 # Django should now be running at http://localhost:8000
+
+cd frontend/
+npm install
+
+# See React app at http://localhost:3000
 ```
 
 ## Notes
